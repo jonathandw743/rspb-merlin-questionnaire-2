@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+	return (
+		<div>
+			App
+			<button
+				onClick={() => {
+					console.log("sending info");
+				}}
+			>
+				send a info to server
+			</button>
+			<button
+				onClick={() => {
+					console.log("getting info");
+					fetch("http://localhost:3001/greet/jonathan")
+					.then((res) => {
+						console.log(res.json());
+					});
+				}}
+			>
+				get info from server
+			</button>
+		</div>
+	);
+};
 
 export default App;
