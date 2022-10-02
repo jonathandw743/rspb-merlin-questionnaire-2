@@ -6,7 +6,14 @@ const App = () => {
 			App
 			<button
 				onClick={() => {
-					console.log("sending info");
+					console.log("posting info");
+					fetch("http://localhost:3001/post-data", {
+						method: 'POST',
+						headers: {
+							'Content-Type': "application/json"
+						},
+						body: JSON.stringify({"some posted data": "47832947"})
+					})
 				}}
 			>
 				send a info to server
@@ -14,9 +21,11 @@ const App = () => {
 			<button
 				onClick={() => {
 					console.log("getting info");
-					fetch("http://localhost:3001/greet/jonathan")
+					fetch("http://localhost:3001/get-data")
 					.then((res) => {
-						console.log(res.json());
+						res.json().then((data) => {
+							console.log(data);
+						});
 					});
 				}}
 			>
