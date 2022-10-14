@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+
+import Slider from "./components/Inputs/Slider";
+import TextInput from "./components/Inputs/TextInput";
+import TextAreaInput from "./components/Inputs/TextAreaInput";
+
+import Question from "./components/Question";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div>
+			<div>banner</div>
+			<div>title</div>
+			<div>
+				<Slider />
+				<br />
+				<TextInput />
+				<br />
+				<TextAreaInput />
+				<br />
+        <Question question={"What is your name?"} input={
+          <TextInput onChange={(value) => {
+            console.log(`could store this value: ${value} to be sent to the server on submit`);
+          }}/>
+        }/>
+			</div>
+		</div>
+	);
 }
 
 export default App;
