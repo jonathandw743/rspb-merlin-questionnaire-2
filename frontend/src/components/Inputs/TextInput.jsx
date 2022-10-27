@@ -16,9 +16,7 @@ const TextInput = ({ width, initialValue, onChange }) => {
 
 TextInput.defaultProps = {
 	initialValue: "",
-	onChange: (value) => {
-		console.log(value);
-	},
+	onChange: (value) => {},
 };
 
 export default TextInput;

@@ -19,9 +19,7 @@ TextAreaInput.defaultProps = {
 	rows: 5,
 	cols: 50,
 	initialValue: "",
-	onChange: (value) => {
-		console.log(value);
-	},
+	onChange: (value) => {},
 };
 
 export default TextAreaInput;
