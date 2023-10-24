@@ -24,7 +24,9 @@ Slider.defaultProps = {
 	min: 0,
 	max: 10,
 	initialValue: 5,
-	onChange: (value) => {},
+	onChange: (value) => {
+		console.log(value);
+	},
 	showValue: true,
 };
 

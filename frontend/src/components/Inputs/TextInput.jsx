@@ -1,4 +1,5 @@
 import { useState } from "react";
+import useInput from "../useInput";
 
 const TextInput = ({ width, initialValue, onChange }) => {
 	const [value, setValue] = useState(initialValue);
